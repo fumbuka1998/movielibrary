@@ -1,23 +1,19 @@
-import logo from './logo.svg';
 import './App.css';
+import Row from '../src/Components/Row';
+import requests from './requests';
+//import Nav from './Components/Nav';
+import Banner from './Components/Banner';
+import '../node_modules/bootstrap/dist/css/bootstrap.css';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Banner/>
+      {/* <Nav /> */}
+      <Row title="TRENDING" fetchUrl = {requests.fetchTrending} isLargeRow/>
+      <Row title="UPCOMMING" fetchUrl = {requests.fetchUpcoming}/>
+      <Row title="TV SERIES" fetchUrl = {requests.fetchTvSeries}/>  
+      <Row title="POPULAR IN SEPTEMBER" fetchUrl = {requests.popularSeptemberMovie}/>
     </div>
   );
 }
